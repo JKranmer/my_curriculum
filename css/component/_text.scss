@@ -1,0 +1,13 @@
+body{
+  font-family: $font-regular;
+  color: $secondary;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+button{
+  font-size: 1rem;
+  font-family: $font-regular;
+}

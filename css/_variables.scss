@@ -1,0 +1,38 @@
+// COLOR THEME
+$primary:  #E5A714;
+$secondary:#1E3140;
+$grey:     #F5F5F5;
+
+// UTILITIES
+$success:   #198754;
+$danger:   #dc3545;
+$warning:  #ffc107;
+$info:     #0dcaf0;
+$ice: white;
+$dark: black;
+
+$all-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'danger': $danger,
+  'warning': $warning,
+  'info': $info
+);
+
+// FONT
+$font-regular: 'Quicksand-Regular', sans-serif;
+$font-light: 'Quicksand-Light', sans-serif;
+$font-bold: 'Quicksand-Bold', sans-serif;
+
+%no-decoration { text-decoration: none;}
+%u-decoration { text-decoration: underline;}
+
+%transition-link{
+  transition: ease-in-out .25s opacity;
+  &:hover{ opacity: 0.5;}
+}
+
+%shadow-sm {
+  box-shadow: .25rem .5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}

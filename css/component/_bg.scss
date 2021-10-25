@@ -1,0 +1,15 @@
+@mixin bg($color){
+  background-color: $color;
+  @if luz-boolean($color){color: $dark;}
+  @else {color: $ice}
+}
+
+@mixin create-bg($bg) {
+  @each $name, $color in $bg {
+    .bg-#{$name}{
+      @include bg($color);
+    }
+  }
+}
+
+@include create-bg($all-colors);

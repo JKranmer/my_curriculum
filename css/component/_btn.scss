@@ -1,0 +1,64 @@
+// Padrao btn
+@mixin btn ( $color, $type: solid){
+  padding: 1rem 2rem;
+  // border-radius: 6rem;
+  border-radius: .2rem;
+  width: auto;
+  display: inline-block;
+  transition: all ease-in-out .25s;
+  cursor: pointer;
+  text-decoration: none;
+  // TYPES
+  @if $type == solid {
+    color: $ice;
+    @if luz-boolean($color){color: $dark;}
+    border: solid 1px $color;
+    background-color: $color;
+    &:hover{
+      background-color: darken($color, 10);
+      border-color: darken($color, 10);
+    }
+  } @else if $type == outline {
+    color: $color;
+    border: solid 1px $color;
+    background-color: transparent;
+    &:hover{
+      color: $ice;
+      @if luz-boolean($color){color: $dark;}
+      background-color: $color;
+    }
+  } @else {
+    @error "Algo deu ruim no #{$color} ou no #{$type}";
+  }
+}
+
+@mixin create-btn($btns) {
+  @each $name, $color in $btns {
+    .btn-#{$name}{
+      @include btn($color);
+    }
+    .btn-outline-#{$name}{
+      @include btn($color, outline);
+    }
+  }
+}
+
+@include create-btn($all-colors);
+
+// .btn-color
+// .btn-outline-color
+
+[class^=btn-].btn-sm{
+  padding: .75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.teste::after{
+  $luz: luminosidade($secondary);
+  // content: 'teste-> ' + luminosidade($blue);
+  @if $luz > 128 {
+    content: 'Cor Claro';
+  } @else {
+    content: 'Cor escura';
+  }
+}

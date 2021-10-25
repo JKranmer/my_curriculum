@@ -1,0 +1,92 @@
+nav{
+  // Link
+  &.pushy{
+    background-color: $ice;
+    a, .pushy-submenu button{
+      color: $dark;
+      &:hover{
+        @extend %transition-link;
+        color: $dark;
+      }
+      @include mq(lg){
+        color: $ice;
+        &:hover{
+          color: $ice;
+        }
+      }
+    }
+  }
+  .pushy-content ul{
+    margin-top: 0;
+    padding-left: 0;
+    .pushy-submenu{
+      ul{
+        @include mq(lg){
+          position: absolute;
+          padding: 1rem;
+          border-radius: .25rem;
+          background-color: $ice;
+          display: block;
+        }
+        @extend %shadow-sm;
+        li{
+          margin-bottom: .5rem;
+          &:last-child{margin-bottom: 0;}
+          a{
+            font-size: .75rem;
+            font-family: $font-regular;
+            color: $dark;
+            &:hover{color: $primary}
+            @include mq(lg){padding: 0;}
+          }
+        }
+      }
+      > button::after{
+        top: 1rem;
+        right: -.5rem;
+        background: none;
+        height: auto;
+        width: auto;
+        display: inline-block;
+        @include icon("\F0140", large);
+        font-size: large;
+        text-rendering: auto;
+        line-height: inherit;
+        -webkit-font-smoothing: antialiased;
+        transform: none;
+      }
+      &.pushy-submenu-open > button::after{
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  // Desktop
+  @include mq(lg){
+    &.pushy{
+      transform: none;
+      width: 100%;
+      background-color: transparent;
+      position: static;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      .pushy-content{
+        @include flx(space-between);
+        align-items: center;
+      }
+      ul{
+        display: flex;
+        list-style: none;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.menu-btn{
+  color: $ice;
+  font-size: 2.5rem;
+  background: transparent;
+  border: none;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Curriculum</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="border-top"></div>
+	<header>
+		<button class="menu-btn mdi mdi-menu" data-menu="#menu"></button>
+	</header>
+
+	<aside>
+		<nav id="menu" class="pushy pushy-left">
+			<div class="pushy-content">
+				<div><img src="img/perfil.png" alt="Foto de perfil"></div>
+				<li>
+					<li><a href="#">Teste 1</a></li>
+					<li><a href="#">Teste 2</a></li>
+					<li><a href="#">Teste 3</a></li>
+					<li><a href="#">Teste 4</a></li>
+				</ul>
+			</div>
+		</nav>
+	</aside>
+
+	<!-- Site Overlay -->
+	<div class="site-overlay"></div>
+
+	<main class="container">
+		<section class="card">
+			<div class="row align-self">
+				<div class="col-4">
+					<img src="img/perfil.png" alt="Foto de perfil">
+				</div>
+				<div class="col-8">
+					<h2>Jonathas Kranmer</h2>
+					<p>Desenvolvedor Front-end & Design Gráfico</p>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<ul class="accordion">
+				<li class="question-content card">
+					<a class="question">Formação
+						<i class="mdi mdi-chevron-down"></i></a>
+					<div class="answer">
+						<p>
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam debitis,
+							ratione adipisci voluptatem praesentium deleniti iure libero eius,
+							provident aliquid blanditiis. Iste libero autem velit debitis id eaque
+							eum sapiente.
+						</p>
+					</div>
+				</li>
+				<li class="question-content card">
+					<a class="question">Experiência Prof.<i class="mdi mdi-chevron-down"></i></a>
+					<div class="answer">
+						<p>
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam debitis,
+							ratione adipisci voluptatem praesentium deleniti iure libero eius,
+							provident aliquid blanditiis. Iste libero autem velit debitis id eaque
+							eum sapiente.
+						</p>
+					</div>
+				</li>
+				<li class="question-content card">
+					<a class="question">Habilidades Prof.<i class="mdi mdi-chevron-down"></i></a>
+					<div class="answer">
+						<p>
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam debitis,
+							ratione adipisci voluptatem praesentium deleniti iure libero eius,
+							provident aliquid blanditiis. Iste libero autem velit debitis id eaque
+							eum sapiente.
+						</p>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<footer></footer>
+	</main>
+	<script src="js/jquery.js"></script>
+	<script src="lib/nav-mobile/js/pushy.js"></script>
+	<script>
+    // Accordion
+    $(function () {
+      $('.accordion a.question').click(function () {
+        $(this).next().hasClass("show") ? $(this).next().removeClass('show') : $(this).next().addClass('show')
+        $(this).find('i').hasClass('rotate') ? $(this).find('i').removeClass('rotate') : $(this).find('i').addClass('rotate')
+      })
+    })
+	</script>
+</body>
+
+</html>

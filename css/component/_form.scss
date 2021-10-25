@@ -1,0 +1,30 @@
+form{
+  background: $ice;
+  border-radius: .5rem;
+  color: $dark;
+  margin: 2rem;
+  padding: 2rem;
+  @extend %shadow-sm;
+  .form-group{
+    display: block;
+    padding: .5rem 0;
+    input{
+      width: 100%;
+      padding: .5rem;
+      margin-top: .25rem;
+      box-sizing: border-box;
+      border: solid 1px $secondary;
+      &:disabled{
+        background: rgba($secondary, .3);
+      }
+    }
+    label{font-size: .75rem;}
+    small{
+      font-size: .75rem;
+    }
+  }
+  .row:last-child > .col-12 {
+    margin-top: 1rem;
+    text-align: end;
+  }
+}

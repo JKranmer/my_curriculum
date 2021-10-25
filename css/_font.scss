@@ -1,0 +1,6 @@
+// Regular
+@include fontface('Quicksand-Regular', 'Quicksand-Regular.ttf', $weight: 400, $style: normal);
+// Light
+@include fontface('Quicksand-Light', 'Quicksand-Light.ttf', $weight: 300, $style: normal);
+// Bold
+@include fontface('Quicksand-Bold', 'Quicksand-Bold.ttf', $weight: 700, $style: normal);

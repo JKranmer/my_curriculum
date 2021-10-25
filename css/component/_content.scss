@@ -1,0 +1,33 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: $grey;
+}
+
+.border-top{
+  width: 100%;
+  background-color: $primary;
+  height: 1rem;
+}
+
+header{
+  width: 100%;
+  background-color: $secondary;
+  padding: 0 .75rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.container{
+  padding: 0 1rem;
+}
+
+.row.align-self > div{
+  align-self: center;
+}
+
+section{
+  margin: 2rem 0;
+  &:first-child{margin-top: 0;}
+  &:last-child{margin-bottom: 0;}
+}
