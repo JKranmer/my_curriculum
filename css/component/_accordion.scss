@@ -4,32 +4,41 @@
   padding-left: 0;
   .answer{
     transition: max-height .5s ease-in-out;
-    &:not(.show) {
-      display: block;
-      max-height: 0vh;
-      p, ul, li, a, h5{
-        visibility: hidden;
-      }
+    max-height: 0vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: block;
+
+    &:not(.show) { max-height: 0vh; }
+
+    >*{
+      opacity: 0;
+      transition-property: opacity;
+      transition-timing-function: ease-in-out;
+      transition-duration: .5s;
     }
+
     &.show{
       max-height: 900vh;
+      >*{ opacity: 1;}
     }
+
     p{
-      // transition: visibility .2s ease-in-out;
-      margin-top: 0;
+      margin: 1rem 0;
       font-size: 1rem;
       line-height: 1.5rem;
-      margin-bottom: 2rem;
-      transition-delay: .25s;
-      transition-property: visibility;
     }
   }
+
   .question {
-    display: flex;
-    justify-content: space-between;
-    transition: ease-in-out opacity .25s;
+    @include flx (space-between);
+    align-items: center;
     cursor: pointer;
-    &:hover{ opacity: .5; }
+    font-family: $font-bold;
+    color: $secondary;
+    font-size: 1.1rem;
+    overflow-x: hidden;
+    max-width: calc(100% - 32px);
     i.mdi-chevron-down::before{
       transition: transform .25s ease-in-out;
       color: $secondary;
@@ -40,14 +49,6 @@
     }
   }
 
-}
-
-.accordion{
-  .question{
-    font-family: $font-bold;
-    color: $secondary;
-    font-size: 1.5rem;
-  }
   a.link{
     text-decoration: none;
     color:  $primary;

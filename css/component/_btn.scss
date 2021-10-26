@@ -1,6 +1,6 @@
 // Padrao btn
 @mixin btn ( $color, $type: solid){
-  padding: 1rem 2rem;
+  padding: .5rem;
   // border-radius: 6rem;
   border-radius: .2rem;
   width: auto;
@@ -54,9 +54,9 @@
 }
 
 .teste::after{
-  $luz: luminosidade($secondary);
+  $luz: luminosidade($primary);
   // content: 'teste-> ' + luminosidade($blue);
-  @if $luz > 128 {
+  @if $luz > 200 {
     content: 'Cor Claro';
   } @else {
     content: 'Cor escura';
