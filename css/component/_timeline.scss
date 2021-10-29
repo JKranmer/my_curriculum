@@ -1,0 +1,27 @@
+.timeline{
+  list-style: none;
+  padding-left: 0rem;
+  > li{
+    border-left: solid 2px $secondary;
+    padding: {
+      left: 1.5rem;
+      bottom: 2rem;
+    }
+    &:not(:first-child){margin-top: -1rem;}
+    &:last-child{border-color: transparent;}
+    h3{
+      font-size: 1rem;
+      font-family: $font-bold;
+      color: $primary;
+      margin-bottom: 0;
+      &::before{
+        @include icon ('\F0765', 1rem);
+        position: absolute;
+        margin: {
+          left: -2.05rem;
+          top: -2px;
+        }
+      }
+    }
+  }
+}

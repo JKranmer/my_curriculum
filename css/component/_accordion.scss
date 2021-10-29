@@ -16,11 +16,20 @@
       transition-property: opacity;
       transition-timing-function: ease-in-out;
       transition-duration: .5s;
+      &.timeline > li h3::before{
+        color: transparent;
+        transition: color .5s ease-in-out;
+      }
     }
 
     &.show{
       max-height: 900vh;
-      >*{ opacity: 1;}
+      >*{
+        opacity: 1;
+        &.timeline > li h3::before{
+          color: $primary;
+        }
+      }
     }
 
     p{
@@ -34,11 +43,15 @@
     @include flx (space-between);
     align-items: center;
     cursor: pointer;
-    font-family: $font-bold;
-    color: $secondary;
-    font-size: 1.1rem;
-    overflow-x: hidden;
-    max-width: calc(100% - 32px);
+    span{
+      font-size: 1.1rem;
+      font-family: $font-bold;
+      color: $secondary;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 32px);
+      white-space: nowrap;
+    }
     i.mdi-chevron-down::before{
       transition: transform .25s ease-in-out;
       color: $secondary;
